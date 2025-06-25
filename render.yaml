@@ -1,0 +1,19 @@
+services:
+  # 이 부분은 Render 웹 서비스의 이름을 적는 곳입니다.
+  # Render 대시보드에서 확인 후, 필요하면 수정해주세요.
+  - type: web
+    name: m4-news-project # Render 대시보드에 보이는 웹 서비스 이름
+    env: java
+    plan: free # 무료 플랜 사용
+    buildCommand: "mvn clean install"
+    startCommand: "java -jar target/dependency/webapp-runner.jar target/*.war"
+    envVars:
+      - key: JDBC_DATABASE_URL
+        fromDatabase:
+          name: m4-news-db # Render에서 만든 PostgreSQL 데이터베이스 이름
+          property: connectionString
+
+  # Render에서 만든 PostgreSQL 데이터베이스에 대한 설명입니다.
+  - type: pserv
+    name: m4-news-db # Render에서 만든 PostgreSQL 데이터베이스 이름
+    plan: free # 무료 플랜 사용
