@@ -11,8 +11,8 @@ public class ArticleDAO {
 
     private Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        return DriverManager.getConnection("jdbc:oracle:thin:@192.168.219.198:1521:orcl", "team01", "1234");
-        //return DriverManager.getConnection("jdbc:oracle:thin:@58.73.200.225:1521:orcl", "team01", "1234");
+        //return DriverManager.getConnection("jdbc:oracle:thin:@192.168.219.198:1521:orcl", "team01", "1234");
+        return DriverManager.getConnection("jdbc:oracle:thin:@58.73.200.225:1521:orcl", "team01", "1234");
     }
 
     private void disconnect() {

@@ -15,8 +15,8 @@ public class EmotionDAO {
     // 1) DB 연결 (기존과 동일)
     private Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        //String url = "jdbc:oracle:thin:@58.73.200.225:1521:orcl";
-        String url = "jdbc:oracle:thin:@192.168.219.198:1521:orcl";
+        String url = "jdbc:oracle:thin:@58.73.200.225:1521:orcl";
+        //String url = "jdbc:oracle:thin:@192.168.219.198:1521:orcl";
         return DriverManager.getConnection(url, "team01", "1234");
     }
 
